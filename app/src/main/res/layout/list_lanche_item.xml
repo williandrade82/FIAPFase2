@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dp"
+    android:orientation="vertical"
+    android:background="@drawable/border">
+    <TextView
+        android:id="@+id/textViewNomeLanche"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="nome"
+        android:textSize="15dp"/>
+    <TextView
+        android:id="@+id/textViewPrecoLanche"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:text="preço"
+        android:textSize="15dp"/>
+</LinearLayout>
