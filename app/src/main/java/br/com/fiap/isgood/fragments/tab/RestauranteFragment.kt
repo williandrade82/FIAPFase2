@@ -1,5 +1,6 @@
 package br.com.fiap.isgood.fragments.tab
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.fiap.isgood.R
+import br.com.fiap.isgood.activities.CadastroActivity
+import br.com.fiap.isgood.activities.ProdutoActivity
 import br.com.fiap.isgood.adapters.ListRestauranteAdapter
 import br.com.fiap.isgood.models.Restaurante
 
@@ -41,7 +44,10 @@ class RestauranteFragment: Fragment (){
         listRestaurantes.add(res2);
         listRestaurantes.add(res3);
 
-        val adapter = ListRestauranteAdapter(listRestaurantes);
+        val adapter = ListRestauranteAdapter(listRestaurantes, ListRestauranteAdapter.OnClickListener{
+            val intent = Intent(activity, ProdutoActivity::class.java)
+            startActivity(intent)
+        });
         recyclerView.adapter = adapter;
     }
 }

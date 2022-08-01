@@ -1,17 +1,16 @@
 package br.com.fiap.isgood.activities
 
 import android.os.Bundle
-import android.view.View
+import android.widget.LinearLayout
+import androidx.appcompat.widget.SearchView
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager2.adapter.FragmentStateAdapter;
+import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import br.com.fiap.isgood.R
-import br.com.fiap.isgood.adapters.ListRestauranteAdapter
 import br.com.fiap.isgood.fragments.tab.LancheFragment
 import br.com.fiap.isgood.fragments.tab.RestauranteFragment
-import br.com.fiap.isgood.models.Restaurante
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -21,6 +20,7 @@ class PesquisaActivity : BaseDrawerActivity() {
     lateinit  var recyclerView:RecyclerView;
     lateinit  var tabLayout:TabLayout;
     lateinit  var viewPager2: ViewPager2;
+    lateinit  var searchView: SearchView;
     val tabs = arrayListOf<String>("Restaurantes","Lanches");
 
 
@@ -28,10 +28,8 @@ class PesquisaActivity : BaseDrawerActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState);
         setOriginalContentView(R.layout.activity_pesquisa);
-
+        searchView = findViewById(R.id.search_bar);
         configureTabs();
-//        configureRecyclerView();
-
     }
 
     private fun configureTabs() {
